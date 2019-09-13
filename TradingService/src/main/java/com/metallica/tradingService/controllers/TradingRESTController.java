@@ -45,7 +45,7 @@ public class TradingRESTController {
         double price = restTemplate.getForObject(url + commodity, Double.class);
         System.out.println("Price " + price);
         tradeEntityList.add(newTrade);
-        rabbitMQSender.send(newTrade);
+       // rabbitMQSender.send(newTrade);
         return new ResponseEntity<>("Successfully added new trade", HttpStatus.ACCEPTED);
     }
 
